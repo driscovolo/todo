@@ -12,7 +12,6 @@ Este proyecto crea una aplicación de consola básica para gestionar una lista d
     - [Función main](#funcion-main)
     - [Función add_task](#funcion-add_task)
     - [Función erase_task](#funcion-erase_task)
-7. [Posibles Mejoras Futuras](#posibles-mejoras-futuras)
 
 ## 1. Descripción General <a name="descripcion-general"></a>
 Este es un proyecto simple de Rust que utiliza vectores (`Vec<String>`) para almacenar una lista de tareas. Los usuarios pueden:
