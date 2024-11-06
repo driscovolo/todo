@@ -37,25 +37,25 @@ La función `main` es el punto de entrada de la aplicación. Controla el ciclo p
 use std::io;
 
 fn main() {
-    let mut todo_list: Vec<String> = Vec::new();  // Crear un vector vacío para almacenar las tareas
+    let mut todo_list: Vec<String> = Vec::new();  
 
     loop {
-        // Mostrar el menú
+        
         println!("\nTo-Do List:");
         println!("1. Add a task");
         println!("2. Remove a task");
         println!("3. CLOSE");
 
-        // Mostrar todas las tareas actuales
+        
         for (i, task) in todo_list.iter().enumerate() {
             println!("{}. {}", i + 1, task);
         }
 
-        // Leer la opción del usuario
+       
         let mut choice = String::new();
         io::stdin().read_line(&mut choice).expect("Failed to read line");
 
-        // Determinar la acción según la elección del usuario
+        
         match choice.trim() {
             "1" => add_task(&mut todo_list),
             "2" => erase_task(&mut todo_list),
@@ -84,7 +84,7 @@ fn add_task(todo_list: &mut Vec<String>) {
     let mut task = String::new();
     io::stdin().read_line(&mut task).expect("Failed to read line");
 
-    todo_list.push(task.trim().to_string());  // Agregar la tarea a la lista
+    todo_list.push(task.trim().to_string());  
     println!("Task added!");
 }
 ```
@@ -110,7 +110,7 @@ fn erase_task(todo_list: &mut Vec<String>) {
 
     match index.trim().parse::<usize>().ok().filter(|&i| i > 0 && i <= todo_list.len()) {
         Some(i) => {
-            todo_list.remove(i - 1);  // Eliminar la tarea en el índice dado
+            todo_list.remove(i - 1);  
             println!("Task erased!");
         }
         None => println!("Invalid task number."),
